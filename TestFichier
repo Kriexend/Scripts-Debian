@@ -1,0 +1,24 @@
+#Permet de savoir si un fichier existe ou non
+#!/bin/sh
+#Fonctions
+NbParam=$#
+TestParametre () {
+  if [ $NbParam -ne 1 ]
+   then
+    echo "Il faut indiquer le chemin du fichier."
+    exit
+  fi
+}
+FichierPing=$1
+TestFichier () {
+ if [ -f $FichierPing ]
+  then
+   echo "Rien" > /dev/null
+  else
+   echo "Le fichier" $FichierPing "n existe pas."
+   exit
+ fi
+}
+#-----------------------------------------------------
+TestParametre
+TestFichier
