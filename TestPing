@@ -1,4 +1,4 @@
-#Fonction permettant de savoir si une I¨P est accessible ou non
+#Permet de savoir si une IP est accessible ou non
 #!/bin/sh
 #Fonctions
 NbParam=$#
@@ -19,5 +19,6 @@ TestPing () {
       echo $IP "n est pas accessible."
   fi
 }
+#-----------------------------------------------------------
 TestParametre
 TestPing
