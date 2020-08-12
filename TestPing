@@ -1,0 +1,23 @@
+#Fonction permettant de savoir si une I¨P est accessible ou non
+#!/bin/sh
+#Fonctions
+NbParam=$#
+TestParametre () {
+  if [ $NbParam -ne 1 ]
+   then
+    echo "Il faut indiquer le chemin du fichier."
+    exit
+  fi
+}
+IP="$1"
+TestPing () {
+  ping -c5 $IP > /dev/null
+  if [ $? -eq 0 ]
+    then
+      echo $IP "est accessible."
+    else
+      echo $IP "n est pas accessible."
+  fi
+}
+TestParametre
+TestPing
