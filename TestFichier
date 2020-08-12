@@ -9,13 +9,13 @@ TestParametre () {
     exit
   fi
 }
-FichierPing=$1
+Fichier=$1
 TestFichier () {
- if [ -f $FichierPing ]
+ if [ -f $Fichier ]
   then
    echo "Rien" > /dev/null
   else
-   echo "Le fichier" $FichierPing "n existe pas."
+   echo "Le fichier" $Fichier "n existe pas."
    exit
  fi
 }
