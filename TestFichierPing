@@ -1,0 +1,41 @@
+#Permet de savoir si les IP contenues dans un fichier sont accessibles ou non
+#!/bin/sh
+#Fonctions
+NbParam=$#
+TestParametre () {
+  if [ $NbParam -ne 1 ]
+   then
+    echo "Il faut indiquer le chemin du fichier."
+    exit
+  fi
+}
+TestPing () {
+  ping -c5 $IP > /dev/null
+  if [ $? -eq 0 ]
+    then
+      echo $IP "est accessible."
+    else
+      echo $IP "n est pas accessible."
+  fi
+}
+FichierPing=$1
+TestFichier () {
+ if [ -f $FichierPing ]
+  then
+   echo "Rien" > /dev/null
+  else
+   echo "Le fichier" $FichierPing "n existe pas."
+   exit
+ fi
+}
+TestFichierPing () {
+  for i in $(cat $FichierPing);
+   do
+    IP="$i"
+    TestPing
+   done
+}
+#-----------------------------------
+TestParametre
+TestFichier
+TestFichierPing
