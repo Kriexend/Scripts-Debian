@@ -11,7 +11,7 @@ TestParametre () {
 }
 IP="$1"
 TestPing () {
-  ping -c5 $IP > /dev/null
+  ping -c5 $IP &> /dev/null
   if [ $? -eq 0 ]
     then
       echo $IP "est accessible."
