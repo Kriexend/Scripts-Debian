@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Creation: 0.1 jeudi 07/07/2022 - Killian LESAGE
 
@@ -6,7 +6,7 @@
 
 #------ Variables ------ :
 # Date du jour
-date=$(printf '%(%Y%m%d)T\n' -1)
+date=$(printf "%(%Y%m%d)T\n" -1)
 # Script pour la recreation du repertoire
 result="./copy_rep_result_$date.sh" 
 # Dossier temporaire pour les fichiers de resultat
